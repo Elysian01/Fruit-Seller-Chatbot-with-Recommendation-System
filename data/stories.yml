@@ -1,0 +1,59 @@
+version: "2.0"
+
+stories:
+
+- story: happy path direct accepted order
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_sign_in_or_sign_up
+  - intent: menu
+  - action: utter_menu
+
+  
+- story: Order placing accept
+  steps:
+  - intent: get_qty
+  - action: utter_place_order
+  # - intent: affirm
+  # - action: action_insert_product
+  # - action: utter_order_placed
+
+
+- story: Order placing deny
+  steps:
+  - intent: get_qty
+  - action: utter_place_order
+  # - intent: deny
+  # - action: utter_order_not_placed
+
+- story: Order placing when qty is given
+  steps:
+  - intent: place_my_order
+  - slot_was_set:
+    - qty
+  - action: utter_place_order
+  # - intent: affirm
+  # - action: action_insert_product
+  # - action: utter_order_placed
+
+- story: Order placing when qty is not given
+  steps:
+  - intent: place_my_order
+  - slot_was_set:
+    - qty: False
+  - action: utter_ask_qty
+  - intent: get_qty
+  - slot_was_set:
+    - qty
+  - action: utter_place_order
+  # - intent: affirm
+  # - action: action_insert_product
+  # - action: utter_order_placed
+
+
+
+
+
+
+

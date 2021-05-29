@@ -1,0 +1,222 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: menu
+  examples: |
+    - main menu
+    - menu
+    - what all do you sell
+    - what all fruits do you have
+    - what do you have
+    - list of fruits
+    - i want to buy some fruits
+    - what all do you have
+
+
+- intent: get_qty
+  examples: |
+    - i want [2](qty) kgs
+    - [5](qty)
+    - [10](qty) kg
+    - [3](qty) kgs
+    - [4](qty) kilo
+    - pick me [11](qty) kg
+
+- regex: qty
+  examples: |
+    - \d{1,2}
+
+- intent: details
+  examples: |
+    - show all of my details
+    - show my current order
+    - show my order
+    - summary of my order
+
+- intent: place_my_order
+  examples: |
+    - place my order
+    - register my order
+    - checkout
+    - checkout my order
+
+
+- intent: previous_order
+  examples: |
+    - show my previous order
+    - what is my last transaction
+    - what was my last purchase
+    - my last transaction
+    - can you tell me my last purchase
+    - show me my last purchase
+    - tell me my last purchase
+    - what did i bought last
+    - past transactions
+    - what is the last product i purchase
+
+- intent: previous_all_order
+  examples: |
+    - show all of my previous order
+    - all my orders
+    - all orders
+    - show all of my transactions
+    - can you tell me all of my last purchases
+    - please tell me all of mine purchases
+    - all transactions 
+    - all of my past transactions
+    - list of all purchases up till now
+
+- intent: fruit_mart
+  examples: |
+    - [Apple](fruit) for [100](price) rupees per kg
+    - [Kiwi](fruit) for [300](price) rupees per kg
+    - [Mangoes](fruit) for [200](price) rupees per kg
+    - [Banana](fruit) for [100](price) rupees per kg
+    - [Lichi](fruit) for [100](price) rupees per kg
+
+
+- intent: my_name_is
+  examples: |
+    - My name is [abhishek](name)
+    - [abhishek](name:abhishek) this side
+    - It's [Abhishek](name:abhishek)
+    - [abhishek](name:abhishek) is my name
+    - you can call me [Abhishek](name)
+    - [sita](name)
+    - [ram](name)
+    - [ramesh](name)
+    - [saurabh](name)
+    - [elysian](name)
+
+- intent: my_loaction_is
+  examples: |
+    - My location is [sanpada](location)
+    - i live in [vashi](location)
+    - It's [nerul](location)
+    - [belapur](location) is my location
+    - [vadala](location)
+    - [andheri](location)
+    - [kurla](location)
+    - [panvel](location)
+
+- intent: what_is_my_name
+  examples: |
+    - What is my name ?
+    - tell me my name
+
+- intent: sign_in
+  examples: |
+    - please sign me in 
+    - please log me in 
+    - sign in 
+
+- intent: sign_up
+  examples: |
+    - i want to sign up
+    - i want to register myself
+    - i am new here
+    - how can i register 
+    - create new account
+    - i want new account
+    - register me
+    - sign up 
+
+
+- intent: ask_price
+  examples: |
+    - What is the price of [mangoes](fruit)
+    - price of [kiwi](fruit)
+    - what is the rate of [banana](fruit)
+    - please tell me the price of [lichi](fruit)
+    - [cherries](fruit)
+    - [blueberries](fruit)
+    - [grapefruit](fruit)
+    - [melon](fruit)
+    - [kiwi](fruit)
+    - [lime](fruit)
+    - [orange](fruit)
+    - [grapefruit](fruit)
+    - [papaya](fruit)
+    - [olive](fruit)
+    - [tomato](fruit)
+    - [pineapple](fruit)
+    - [pomegranate](fruit)
+    - [peach](fruit)
+    - [raspberries](fruit)
+    - [strawberries](fruit)
+    - [jackfruit](fruit)
+    - [dragon](fruit)
+
+- intent: do_you_have_fruit
+  examples: |
+    - do you have [grapes](fruit) ?
+    - do you sell [oranges](fruit)
+    - i want to buy [melon](fruit)
+    - give me [pineapple](fruit)
+    - i want to purchase [dragon](fruit) fruit
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+
+- intent: recommend
+  examples: |
+    - recommend something for [shrimp](product)
+    - what does go good with [burgers](product)
+    - recommendation for [eggs](product)
+    - what do i buy with [cake](product)
+    - can you suggest me something good which will go with [milk](product)
+

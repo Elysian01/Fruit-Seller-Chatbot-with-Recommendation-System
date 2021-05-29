@@ -1,0 +1,154 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - my_name_is
+  - what_is_my_name
+  - fruit_mart
+  - menu
+  - details
+  - previous_order
+  - place_my_order
+  - previous_all_order
+  - my_loaction_is
+  - sign_in
+  - sign_up
+  - ask_price
+  - do_you_have_fruit
+  - get_qty
+  - recommend
+
+entities:
+  - fruit
+  - price
+  - name 
+  - location
+  - qty
+  - product
+  
+  
+slots: 
+  name:
+    type: text
+    influence_conversation: true
+    initial_value: null
+  location:
+    type: text
+    influence_conversation: true
+    initial_value: null
+  qty:
+    type: float
+    influence_conversation: true
+    auto_fill: True
+  password:
+    type: text
+  customer_id:
+    type: text
+  fruit_id:
+    type: text
+  fruit:
+    type: text
+  price:
+    type: text
+  product:
+    type: text
+
+
+forms:
+  sign_in_form:
+    name:
+      - type: from_text
+    password:
+      - type: from_text
+
+  sign_up_form:
+    name:
+      - type: from_text
+    location:
+      - type: from_text
+    password:
+      - type: from_text
+
+        
+
+actions:
+  - action_insert_product
+  - action_previous_order
+  - action_all_previous_order
+  - action_sign_up
+  - action_sign_in
+  - action_ask_price
+  - action_do_you_have_fruit
+  - action_recommend
+    
+responses:
+
+  utter_ask_name:
+    - text: Please provide your first name ?
+
+  utter_ask_location:
+    - text: Please provide your location where you want fruits deliver ?
+
+  utter_ask_password:
+    - text: Please provide your password
+
+  utter_ask_qty:
+    - text: How many kilo {fruit} do you want ?
+
+  utter_tell_name:
+    - text: your name is {name}
+
+  utter_customer_details:
+    - text: your name is {name} and your delivery location is set to {location}
+
+  utter_place_order:
+    - text: Your name is {name} and delivery address is {location}, you want to buy {qty} kg of {fruit} for a price of {price} per kg, Do you want me to place order ?
+
+  utter_details:
+    - text: Your name is {name} and delivery location is {location}, you want to buy {fruit} for {price}
+
+  utter_order_placed:
+    - text: Thankyou for shopping with us your order is placed :)
+
+  utter_order_not_placed:
+    - text: Order not placed, type main menu to show menu
+
+  utter_greet:
+    - text: Hey! I am fruit bot, i can order fruits and show previous transactions for you 
+
+  utter_sign_in_or_sign_up:
+    - text: Please Sign In or Sign Up 
+      buttons:
+      - title: Sign In
+        payload: /sign_in
+      - title: Sign Up
+        payload: /sign_up
+  
+  utter_menu:
+    - text: What would you like to buy ? 
+      buttons:
+      - title: Apple for 100 rupees per kg
+        payload: /fruit_mart{{"fruit":"Apple","price":"100"}}
+      - title: Mangoes for 200 rupees per kg
+        payload: /fruit_mart{{"fruit":"Mangoes","price":"200"}}
+      - title: Kiwi for 300 rupees per kg
+        payload: /fruit_mart{{"fruit":"Kiwi","price":"300"}}
+      - title: Banana for 100 rupees per kg
+        payload: /fruit_mart{{"fruit":"Banana","price":"100"}}
+      - title: Lichi for 100 rupees per kg
+        payload: /fruit_mart{{"fruit":"Lichi","price":"100"}}
+
+
+  utter_goodbye:
+  - text: Thanks for your time, please visit again :)
+
+  utter_iamabot:
+  - text: I am fruit bot, build for helping you fast :)
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

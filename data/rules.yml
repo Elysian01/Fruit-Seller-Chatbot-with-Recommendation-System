@@ -1,0 +1,106 @@
+version: "2.0"
+
+rules:
+
+- rule: Activate Sign Up form 
+  steps:
+  - intent: sign_up
+  - action: sign_up_form
+  - active_loop: sign_up_form
+
+- rule: Submit Sign Up form
+  condition:
+  - active_loop: sign_up_form
+  steps:
+  - action: sign_up_form
+  - active_loop: null
+  - action: utter_customer_details
+  - action: action_sign_up
+
+- rule: Activate Sign In form 
+  steps:
+  - intent: sign_in
+  - action: sign_in_form
+  - active_loop: sign_in_form
+
+- rule: Submit Sign In form
+  condition:
+  - active_loop: sign_in_form
+  steps:
+  - action: sign_in_form
+  - active_loop: null
+  - action: action_sign_in
+  
+
+- rule: Ask Qty
+  steps:
+  - intent: fruit_mart
+  - action: utter_ask_qty
+
+
+- rule: Display Menu
+  steps:
+  - intent: menu
+  - action: utter_menu
+
+
+- rule: order details
+  steps:
+  - intent: details
+  - action: utter_details
+
+
+- rule: Get the price
+  steps:
+  - intent: ask_price
+  - action: action_ask_price
+
+
+- rule: Check the availability of fruit
+  steps:
+  - intent: do_you_have_fruit
+  - action: action_do_you_have_fruit
+
+- rule: Previous Order Details
+  steps:
+  - intent: previous_order
+  - action: action_previous_order
+
+- rule: Previous All Order Details
+  steps:
+  - intent: previous_all_order
+  - action: action_all_previous_order
+
+
+- rule: say name
+  steps:
+  - intent: what_is_my_name
+  - action: utter_tell_name
+
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+- rule: accept
+  steps:
+  - intent: affirm
+  - action: action_insert_product
+  - action: utter_order_placed
+
+- rule: deny
+  steps:
+  - intent: deny
+  - action: utter_order_not_placed
+
+- rule: recommend product
+  steps:
+  - intent: recommend
+  - action: action_recommend
