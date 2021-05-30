@@ -2,6 +2,45 @@
 
 Fruits/Vegetable Seller Bot With Recommendation System Integrated (Using Apriori Algorithm) And MySql Database to record all the transactions and products/stock details.
 
+
+## Install dependencies
+
+```bash
+pip install rasa
+```
+Installation docs: https://rasa.com/docs/rasa/installation/
+
+Optional Installation
+```bash
+pip install rasa-x
+```
+
+**Import and setup the Mysql database**
+
+## Run the bot
+
+Use `rasa train` to train a model.
+
+Then, to run, first set up your action server in one terminal window:
+```bash
+rasa run actions
+```
+
+In another window, run the following command to talk to the bot:
+```
+rasa shell --debug
+```
+
+Note that `--debug` mode will produce a lot of output meant to help you understand how the bot is working
+under the hood. To simply talk to the bot, you can remove this flag.
+
+
+You can also try out your bot locally using Rasa X by running
+```
+rasa x
+```
+
+
 ## Integrated Features
 
 * Sign In and Sign Up functionality with DB support
