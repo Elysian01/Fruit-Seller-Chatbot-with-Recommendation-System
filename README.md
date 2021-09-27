@@ -10,6 +10,18 @@ pip install rasa
 ```
 Installation docs: https://rasa.com/docs/rasa/installation/
 
+Create a new python environment
+```bash
+conda create --name rasa python==3.6
+```
+
+Install all the requirements
+```bash
+pip install -r requirements.txt
+```
+
+Import SQL database "fruit_rasa" to your local server (Xampp)
+
 Optional Installation
 ```bash
 pip install rasa-x
