@@ -12,7 +12,7 @@ Installation docs: https://rasa.com/docs/rasa/installation/
 
 Create a new python environment
 ```bash
-conda create --name rasa python==3.6
+conda create --name rasa python=3.6
 ```
 
 Install all the requirements
